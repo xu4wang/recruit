@@ -12,7 +12,7 @@ https://www.cs.tcd.ie/David.Gregg/
 其余的四道题是我准备的。
 
 您在实验过程中，有任何问题可以通过邮件（wangxu AT mail DOT dspread DOT com ）联系我。 
-也可以通过QQ或者微信和我交流。 
+也可以通过QQ或者微信和我交流（请邮件我获取联系方式）。 
 
 实验一
 -----------
@@ -36,16 +36,15 @@ the kind of simple, clear, maintainable and (mostly) correct software
 that we write in our course. In other words, other people may write
 software like this, but you shouldn't.
 
-The software is attached as a zip ball named oc.zip.
-
-Switch to the intrp directory:
-	cd oc
-
 To compile the code, and test that it's working, use the command:
+```
 	make test
+```
 
 To run a test program you can type:
+```
 	./interp < fac.oo.1
+```
 
 The file fac.oo.1 is a bytecode version of the C program fac.c. The
 program fac.c has been written in a small subset of C. This is compiled
@@ -55,26 +54,24 @@ a bit adventurous, take a look at the file Makefile. (We'll be looking
 at makefiles next term).
 
 Your job is to examine and modify the file interp.c (the bytecode
-interpreter).  You should do three things with this file: (1) You
-should add appropriate commments to the file to make it easier for the
-reader to understand (this will involve you figuring it out
-sufficiently to explain it). (2) You should rewrite the code in areas
-of the file where you think it could be simplified and clarified. (I
-suggest that you avoid really large changes that would completely
-restructure the program). (3) There is a facility in the program to
-dump out information on each bytecode instruction as it is being
-executed. You should figure out how to use this, and dump out the
-trace of executed bytecode instructions for the sample program
-(fac.c).
+interpreter).  You should do three things with this file: 
+
+* You should add appropriate commments to the file to make it easier for the reader to understand (this will involve you figuring it out sufficiently to explain it). 
+*  You should rewrite the code in areas of the file where you think it could be simplified and clarified. (I suggest that you avoid really large changes that would completely restructure the program). 
+* There is a facility in the program to dump out information on each bytecode instruction as it is being executed. You should figure out how to use this, and dump out the trace of executed bytecode instructions for the sample program (fac.c).
 
 Finally, just to familiarise yourself with the wider system, modify
 fac.c so that it computes the factorial of all positive integers
 up to 11 (instead of 10). Compile the modified program to bytecode
 with the command:
+```
 	./parse < fac.c > fac.oo.1
+```
 
 Now run the modified version with your modified bytecode interpreter:
+```
 	./interp < fac.oo.1
+```
 
 This lab will not be marked. The main goal is to get used to reading
 other people's code, and to understand better why it is important that
@@ -87,10 +84,10 @@ will be submitted and marked.
 ---------
 
 请结合上面的实验， 描述下该虚拟机的实现机制，包括：
-1. 有几个寄存器？
-2. 如何实现if语句的翻译？
-3. 对于C语言的局部变量和全局变量如何分配内存？
-4. 如何实现函数调用？
+* 有几个寄存器？
+* 如何实现if语句的翻译？
+* 对于C语言的局部变量和全局变量如何分配内存？
+* 如何实现函数调用？
 
 
 实验三
@@ -125,7 +122,7 @@ Line 29 putstr("factorial ");
 
 在实验三的基础上思考，如果需要实现一个针对fac.c 的源代码级别的调试器，该如何实现。 
 实现如下功能：
-1. 能够在PC上解释执行 fac.c 的内容
-2. 能够单步执行fac.c 的内容
-3. 能够设置断点， 在执行到断点的时候停下来
-4. 在调试过程中， 可以查看当前的局部变量和全局变量的值
+* 能够在PC上解释执行 fac.c 的内容
+* 能够单步执行fac.c 的内容
+* 能够设置断点， 在执行到断点的时候停下来
+* 在调试过程中， 可以查看当前的局部变量和全局变量的值
