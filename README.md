@@ -9,9 +9,9 @@ http://en.wikipedia.org/wiki/Lennart_Augustsson
 五道题中， 实验一出自：
 https://www.cs.tcd.ie/David.Gregg/
 
-其余的四道题是我准备的。
+其余的四道题是我们自己准备的。
 
-您在实验过程中，有任何问题可以通过邮件（wangxu AT mail DOT dspread DOT com ）联系我。 
+您在实验过程中，有任何问题可以通过邮件（wangxu AT mail DOT dspread DOT com ）联系我们。 
 也可以通过QQ或者微信和我交流（请邮件我获取联系方式）。 
 
 实验一
