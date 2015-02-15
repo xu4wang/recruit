@@ -93,7 +93,7 @@ will be submitted and marked.
 实验三
 --------
 
-在原有oc.zip中， 其支持4个原生的C语言调用， 分别是getchar,putchar,eputchar,exit. 请尝试增加一个原生调用：
+在原有实现中， 虚拟机（interp）支持4个原生的C语言调用， 分别是getchar,putchar,eputchar,exit. 请尝试增加一个原生调用：
 
 ```c
 void *oc_memcpy(char *dest, char *src, int n);
