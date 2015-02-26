@@ -101,6 +101,26 @@ void *oc_memcpy(char *dest, char *src, int n);
 
 其作用是把n个字节的字符串从 src 拷贝到 dest。 请在parse, interp中增加该功能后， 写一个简单的例子，用parse编译，用interp执行。证明该函数可以被interp支持。
 
+提示：
+
+您需要
+
+1. 改 interp.c 代码，在里面加入一个oc_memcpy的实现， 例如：
+```c
+void *oc_memcpy(char *dest, char *src, int count)
+{
+ char *tmp = dest;
+ char *s = src;
+ while (count--)
+  *tmp = *s ;
+ return dest;
+}
+```
+2. 改写interp.c 中的虚拟机bytecode翻译执行部分， 使得其能在适当的函数调用下，调用上面的oc_memcpy函数。
+3. 改写parse.c 使得其在扫描到源代码中的 oc_memcpy 调用时候，能够生成合适的函数调用机器码。
+4. 写一个小的例子程序，类似fac.c, 其中有oc_memcpy调用。 用该例子程序来验证parse和interp的实现。
+
+
 实验四
 ----------
 
