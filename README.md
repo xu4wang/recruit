@@ -116,8 +116,8 @@ void *oc_memcpy(char *dest, char *src, int count)
  return dest;
 }
 ```
-2. 改写interp.c 中的虚拟机bytecode翻译执行部分， 使得其能在适当的函数调用下，调用上面的oc_memcpy函数。
-3. 改写parse.c 使得其在扫描到源代码中的 oc_memcpy 调用时候，能够生成合适的函数调用机器码。
+2. 改写interp.c 中的虚拟机bytecode翻译执行部分， 使得其能在碰到 ```X_CALL``` 机器码时候，在合适的参数下，调用上面的oc_memcpy函数。
+3. 改写parse.c 使得其在扫描到源代码中的 oc_memcpy 调用时候，能够生成合适的 ```X_CALL``` 机器码和参数。
 4. 写一个小的例子程序，类似fac.c, 其中有oc_memcpy调用。 用该例子程序来验证parse和interp的实现。
 
 
