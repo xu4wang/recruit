@@ -124,7 +124,7 @@ void *oc_memcpy(char *dest, char *src, int count)
 
 如果oc_memcpy涉及到指针传递，调试困难， 也可以选择给该虚拟机扩展一个 oc_add 函数。如下：
 
-```
+```c
 int oc_add(int a, int b) {
    return a+b;
 }
