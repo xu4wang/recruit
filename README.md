@@ -120,6 +120,15 @@ void *oc_memcpy(char *dest, char *src, int count)
 3. 改写parse.c 使得其在扫描到源代码中的 oc_memcpy 调用时候，能够生成合适的 ```X_CALL``` 机器码和参数。
 4. 写一个小的例子程序，类似fac.c, 其中有oc_memcpy调用。 用该例子程序来验证parse和interp的实现。
 
+提示2：
+
+如果oc_memcpy涉及到指针传递，调试困难， 也可以选择给该虚拟机扩展一个 oc_add 函数。如下：
+
+```
+int oc_add(int a, int b) {
+   return a+b;
+}
+```
 
 实验四
 ----------
