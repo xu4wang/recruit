@@ -107,6 +107,10 @@ void *oc_memcpy(char *dest, char *src, int n);
 
 1. 改 interp.c 代码，在里面加入一个oc_memcpy的实现， 例如：
 ```c
+
+/* 注意以下代码仅仅是示例。 
+实际使用时候，需要考虑intep内部的指针和parse生成的机器码中指针的实际意义, 并做相应调整。 */
+
 void *oc_memcpy(char *dest, char *src, int count)
 {
  char *tmp = dest;
